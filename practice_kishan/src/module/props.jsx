@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-// import PropTypes from 'prop-type';
+import PropTypes from 'prop-type';
 
 
 
@@ -25,6 +25,14 @@ First.defaultProps = {
     name : "sadhu",
     img : "https://tse4.mm.bing.net/th/id/OIP.dYEt7HJ1fMzkjAdyU8hLdwHaFj?pid=Api&P=0&h=180",
     price : "20000"
+}
+
+
+//props types to check the type of data
+First.PropTypes = {
+    name : PropTypes.string.isRequired,
+    img : PropTypes.string.isRequired,
+    price : PropTypes.string.isRequired
 }
 
 export default First;
