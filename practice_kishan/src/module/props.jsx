@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import PropTypes from 'prop-type';
+// import PropTypes from 'prop-type';
 
+//props = data jo parent component child component ko deta hai
 
 
 class First extends Component{
@@ -29,10 +30,10 @@ First.defaultProps = {
 
 
 //props types to check the type of data
-First.PropTypes = {
-    name : PropTypes.string.isRequired,
-    img : PropTypes.string.isRequired,
-    price : PropTypes.string.isRequired
-}
+// First.PropTypes = {
+//     name : PropTypes.string.isRequired,
+//     img : PropTypes.string.isRequired,
+//     price : PropTypes.string.isRequired
+// }
 
 export default First;
