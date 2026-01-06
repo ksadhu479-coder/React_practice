@@ -51,7 +51,7 @@ class ContactList extends Component {
         <ul style={{ marginTop: '20px' }}>
           {contacts.map((c) => (
             <li key={c.id}>
-              <div>{c.fName}</div>
+              <div><b>{c.fName}</b></div>
               
               <button onClick={() => this.handleView(c.id)}>View</button>
               <button onClick={() => this.handleDelete(c.id)} style={{ marginLeft: '10px' }}>Delete</button>
