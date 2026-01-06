@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 
 class ContactList extends Component {
-  state = { fName: '', lName: '', mobile: '', contacts: [], selectedId: null };
+    constructor(props){
+        super(props);
+        this.state={
+            fName : '',
+            lName:'',
+            mobile:'',
+            contacts:[],
+            selectedId : null
+        }
+    }
 
-  
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -27,7 +36,7 @@ class ContactList extends Component {
   };
 
   render() {
-    
+
     const { fName, lName, mobile, contacts, selectedId } = this.state;
 
     return (
@@ -42,7 +51,7 @@ class ContactList extends Component {
         <ul style={{ marginTop: '20px' }}>
           {contacts.map((c) => (
             <li key={c.id}>
-              <div><strong>{c.fName}</strong></div>
+              <div>{c.fName}</div>
               
               <button onClick={() => this.handleView(c.id)}>View</button>
               <button onClick={() => this.handleDelete(c.id)} style={{ marginLeft: '10px' }}>Delete</button>
@@ -50,8 +59,7 @@ class ContactList extends Component {
              
               {selectedId === c.id && (
                 <div>
-                  <p>Last Name: {c.lName}</p>
-                  <p>Mobile: {c.mobile}</p>
+                  <p>{c.lName} - {c.mobile}</p>
                 </div>
               )}
             </li>
@@ -61,5 +69,6 @@ class ContactList extends Component {
     );
   }
 }
-    
+
+
 export default ContactList;
