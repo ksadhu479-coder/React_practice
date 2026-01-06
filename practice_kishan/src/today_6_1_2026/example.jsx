@@ -19,10 +19,14 @@ class ContactList extends Component {
 
   handleAdd = () => {
     const { fName, lName, mobile, contacts } = this.state;
+    if(this.state.fName == "" || this.state.lName == "" || this.state.mobile =="") {
+        alert("enter all required field")
+    }
+    else{
+        const newEntry = { id: Date.now(), fName, lName, mobile };
+        this.setState({ contacts: [...contacts, newEntry], fName: '', lName: '', mobile: '' });
+    }
 
-
-    const newEntry = { id: Date.now(), fName, lName, mobile };
-    this.setState({ contacts: [...contacts, newEntry], fName: '', lName: '', mobile: '' });
   };
 
    handleView = (id) => {
